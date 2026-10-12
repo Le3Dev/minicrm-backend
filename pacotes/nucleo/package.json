@@ -1,0 +1,17 @@
+{
+  "name": "@minicrm/nucleo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Núcleo compartilhado: tipos de domínio, contratos da camada de aplicação e utilitários de teste",
+  "exports": {
+    "./dominio": "./src/dominio/index.ts",
+    "./aplicacao": "./src/aplicacao/index.ts",
+    "./testes": "./src/testes/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "zod": "4.1.12"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@minicrm/infra-azure",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Adaptadores de infraestrutura reutilizados pelos serviços: Azure Functions, JWT, Azure SQL, outbox, Event Grid e filas",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@azure/eventgrid": "5.12.0",
+    "@azure/functions": "4.16.5",
+    "@azure/identity": "4.13.3",
+    "@azure/monitor-opentelemetry": "1.20.1",
+    "@azure/storage-queue": "12.32.0",
+    "@minicrm/contratos": "workspace:*",
+    "@minicrm/nucleo": "workspace:*",
+    "jose": "6.2.12",
+    "mssql": "12.7.4"
+  },
+  "devDependencies": {
+    "@types/mssql": "12.3.0"
+  }
+}

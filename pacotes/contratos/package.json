@@ -1,0 +1,16 @@
+{
+  "name": "@minicrm/contratos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contratos de integração: tipos de evento (CloudEvents), dados dos eventos e esquemas para teste de contrato",
+  "exports": {
+    "./tipos": "./src/tipos.ts",
+    "./esquemas": "./src/esquemas.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "zod": "4.1.12"
+  }
+}
