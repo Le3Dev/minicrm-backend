@@ -1,0 +1,8 @@
+packages:
+  - "pacotes/*"
+  - "servicos/*"
+  - "bff/*"
+  - "scripts"
+onlyBuiltDependencies:
+  - "@node-rs/argon2"
+  - esbuild
