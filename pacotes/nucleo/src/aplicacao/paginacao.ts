@@ -1,7 +1,7 @@
 import { z } from "zod";
+import { TAMANHO_PAGINA } from "../dominio/limites";
 
-/** Todas as listagens são paginadas em 20 registros (RF18). */
-export const TAMANHO_PAGINA = 20;
+export { TAMANHO_PAGINA };
 
 export interface Pagina<T> {
   readonly itens: T[];

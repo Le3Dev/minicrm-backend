@@ -1,5 +1,5 @@
 import type { HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import { ErroDominio, type Resultado } from "@minicrm/nucleo/dominio";
+import { ErroDominio, falha, sucesso, type Resultado } from "@minicrm/nucleo/dominio";
 import type { IManipulador, UsuarioAutenticado } from "@minicrm/nucleo/aplicacao";
 import type { IAutenticador } from "../auth/autenticador";
 import { respostaErro, respostaErroInterno } from "./respostas";
@@ -68,4 +68,14 @@ export async function lerJson(req: HttpRequest): Promise<Record<string, unknown>
 /** Parâmetros de query como objeto simples, para validação. */
 export function lerQuery(req: HttpRequest): Record<string, string> {
   return Object.fromEntries(req.query.entries());
+}
+
+/** Junta a entrada validada com o usuário autenticado, formando o comando do caso de uso. */
+export function comUsuario<E extends object>(
+  entrada: Resultado<E>,
+  usuario: UsuarioAutenticado | null,
+): Resultado<E & { usuario: UsuarioAutenticado }> {
+  if (!entrada.ok) return falha(entrada.erro);
+  if (!usuario) return falha(new ErroDominio("NAO_AUTENTICADO", "Sessão inválida ou expirada."));
+  return sucesso({ ...entrada.valor, usuario });
 }

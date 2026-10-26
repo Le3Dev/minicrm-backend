@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "MODO_ADAPTADORES": "memoria",
+    "JWT_SEGREDO_LOCAL": "troque-este-segredo-local-com-32-caracteres-ou-mais"
+  },
+  "Host": {
+    "LocalHttpPort": 7073
+  }
+}

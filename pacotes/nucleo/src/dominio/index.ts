@@ -5,3 +5,4 @@ export * from "./raiz-agregado";
 export * from "./perfil";
 export * from "./visibilidade";
 export * from "./data-calendario";
+export * from "./limites";

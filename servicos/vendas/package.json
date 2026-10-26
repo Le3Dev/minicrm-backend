@@ -1,0 +1,21 @@
+{
+  "name": "@minicrm/svc-vendas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Microsserviço de Vendas: oportunidades e funil",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --format=cjs --sourcemap --outfile=dist/index.js --external:@azure/functions-core --external:@azure/monitor-opentelemetry",
+    "typecheck": "tsc -p tsconfig.json",
+    "start": "func start",
+    "migrar": "node --import tsx ../../scripts/migrar.ts migracoes"
+  },
+  "dependencies": {
+    "@azure/functions": "4.16.5",
+    "@azure/monitor-opentelemetry": "1.20.1",
+    "@minicrm/contratos": "workspace:*",
+    "@minicrm/infra-azure": "workspace:*",
+    "@minicrm/nucleo": "workspace:*",
+    "zod": "4.1.12"
+  }
+}
